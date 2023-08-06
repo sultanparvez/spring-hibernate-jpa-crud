@@ -12,12 +12,11 @@ public class StudentDAOImpl implements StudentDAO{
     //Define Field For entity manger
     private EntityManager entityManger;
 
+    //Inject Entity Manager
+    @Autowired
     public StudentDAOImpl(EntityManager entityManger) {
         this.entityManger = entityManger;
     }
-
-    //Inject Entity Manager
-    @Autowired
 
     //implement Save Method
     @Override
