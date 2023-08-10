@@ -19,7 +19,19 @@ public class CruddemoApplication {
 		return runner ->{
 //			createStudent(studentDAO);
 			createMultipleStudent(studentDAO);
+			readStudent(studentDAO);
 		};
+	}
+
+	private void readStudent(StudentDAO studentDAO) {
+		Student anotherStudent = new Student("p0wer", "Fang","parvez@gmail.com");
+		studentDAO.Save(anotherStudent);
+		int std_id = anotherStudent.getId();
+		//retrieve student based on id
+		Student displayStudent = studentDAO.findById(std_id);
+
+		//Display Students
+		System.out.println("The student info is - " + displayStudent);
 	}
 
 	private void createMultipleStudent(StudentDAO studentDAO) {
